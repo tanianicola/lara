@@ -7,6 +7,6 @@
  */
 
 class Category extends \Eloquent {
-    public $timestamps = false;
+    public $timestamps = false; //not necessary to fill the timestamps
     //protected table ='categories';
 } 

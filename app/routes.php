@@ -40,4 +40,6 @@ Route::get('/test/showname/{voornaam}/{naam} ', array('as'=>'test.showname','use
 );
 //Routing for Blog
 Route::resource('blog','BlogController');
+Route::post('category',array('as'=>'category.store','uses'=>'CategoryController@store'));
 Route::resource('category','CategoryController');
+

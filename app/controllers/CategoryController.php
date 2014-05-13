@@ -9,7 +9,8 @@ class CategoryController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+        $list = Category::all();
+        return View::make('category.index',compact('list'));
 	}
 
 
@@ -20,7 +21,7 @@ class CategoryController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+        return View::make('category.create');
 	}
 
 
@@ -31,7 +32,12 @@ class CategoryController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		//handle create
+        $title = Input::get('title');
+        $category=new Category();
+        $category->title = $title;
+        $category->save();
+        return "The category ".$title ."was succesfully saved.";
 	}
 
 
